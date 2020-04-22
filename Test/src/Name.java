@@ -24,6 +24,20 @@ public class Name {
         return patronymic;
     }
 
+    public void setFirstName(String firstName) {
+        if (firstName == null || firstName.equals("")) throw new IllegalArgumentException("FirstName is not defined");
+        this.firstName = firstName;
+    }
+    public void setSurname(String surname) {
+        if (surname == null || surname.equals("")) throw new IllegalArgumentException("Surname is not defined");
+        this.surname = surname;
+    }
+    public void setPatronymic(String patronymic) {
+        if (patronymic == null || patronymic.equals(""))
+            throw new IllegalArgumentException("Patronymic is not defined");
+        this.patronymic = patronymic;
+    }
+
     Name(String firstName) {
         this.firstName = firstName;
     }
