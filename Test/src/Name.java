@@ -39,14 +39,14 @@ public class Name {
     }
 
     Name(String firstName) {
-        this.firstName = firstName;
+        setFirstName(firstName);
     }
     Name(String firstName, String surname){
         this(firstName);
-        this.surname = surname;
+        setSurname(surname);
     }
     Name(String firstName, String patronymic, String surname){
         this(firstName, surname);
-        this.patronymic = patronymic;
+        setPatronymic(patronymic);
     }
 }
