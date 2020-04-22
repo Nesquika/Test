@@ -1,5 +1,5 @@
 public class Human {
-    private String name;
+    private Name name;
     private int height;
     private Human father;
 
@@ -19,5 +19,31 @@ public class Human {
 
     public Human getFather() {
         return father;
+    }
+
+    public Human(){}
+    public Human(String name, int height) {
+        this(new Name(name), height, null);
+    }
+    public Human(String name, int height, Human father) {
+        this(new Name(name), height, father);
+    }
+    public Human(Name name, int height) {
+        this(name, height, null);
+    }
+    public Human(Name name, int height, Human father) {
+        if (father != null) {
+            if (name.getSurname() == null && father.name.getSurname() != null)
+                name.setSurname(father.name.getSurname());
+            if (father.name.getFirstName() != null && name.getPatronymic() == null) {
+                String fatherName = father.name.getFirstName();
+                if (fatherName.substring(fatherName.length() - 2).equals("ey"))
+                    name.setPatronymic(fatherName.substring(0, fatherName.length() - 1) + "evich");
+                else name.setPatronymic(fatherName + "ovich");
+            }
+        }
+        this.name = name;
+        this.father = father;
+        setHeight(height);
     }
 }
