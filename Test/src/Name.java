@@ -12,14 +12,26 @@ public class Name {
         return FIO;
     }
 
-    public Name(String firstName) {
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    Name(String firstName) {
         this.firstName = firstName;
     }
-    public Name(String firstName, String surname){
+    Name(String firstName, String surname){
         this(firstName);
         this.surname = surname;
     }
-    public Name(String firstName, String patronymic, String surname){
+    Name(String firstName, String patronymic, String surname){
         this(firstName, surname);
         this.patronymic = patronymic;
     }
